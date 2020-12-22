@@ -16,13 +16,13 @@ def get_status(user_id):
         "access_token": os.environ["VK_TOKEN"],
     }
     response = requests.post(
-        url="https://api.vk.com/method/users.get", params=params
+        "https://api.vk.com/method/users.get", params=params
     )
     return response.json()["response"][0]["online"]
 
 
 def sms_sender(sms_text):
-    account_sid = os.environ["ID"]
+    account_sid = os.environ["SID"]
     auth_token = os.environ["TOKEN"]
     client = Client(account_sid, auth_token)
     message = client.messages.create(

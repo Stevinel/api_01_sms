@@ -22,8 +22,8 @@ def get_status(user_id):
 
 
 def sms_sender(sms_text):
-    account_sid = os.environ["SID"]
-    auth_token = os.environ["TOKEN"]
+    account_sid = os.environ["TWILID_ACCOUNT_SID"]
+    auth_token = os.environ["TWILID_ACCOUNT_TOKEN"]
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         body=sms_text,
